@@ -10,6 +10,6 @@ export function useFormInput (initialValue) {
 
     return {
         value,
-        onchange : handleChange,
+        onChange : handleChange,
     }
 }
