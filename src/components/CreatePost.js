@@ -1,6 +1,21 @@
 
 import { firestore } from "../firebase";
 import { useFormInput } from "../hooks";
+import styled , {css} from 'styled-components';
+
+const StyledButton = styled.button`  
+height: 33px;
+background: ${(props) =>props.primary ? '#4caf50' : 'blue'};
+border: 0;
+color: #fff;
+padding: 5px;
+font-size: 15px;
+border-radius: 3px;
+cursor: pointer;
+${(props)=> props.primary && css`
+border: 3px solid ${props.bgColor};
+`};
+`;
  function CreatePost() {
 
   const title = useFormInput([]);
@@ -47,7 +62,7 @@ import { useFormInput } from "../hooks";
 
     </div>
 
-    <button className="create-post-btn">Create Post</button>
+    <StyledButton primary bgColor="black">Create Post</StyledButton>
 
    </form>
 </div>

@@ -1,10 +1,32 @@
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+
+const StyledLink = styled(Nav.Link)`
+text-decoration: none;
+  color: #9e9e9e;
+
+&:hover{
+    text-decoration: overline;
+    color: white;
+  }
+`;
+
+const StyledBrand = styled(Navbar.Brand)`
+text-decoration: none;
+color: grey;
+
+&:hover{
+  color:white;
+
+}
+`;
 
 function NavScrollExample() {
   const navigate = useNavigate();
@@ -23,7 +45,7 @@ function NavScrollExample() {
         data-bs-theme="dark"
       >
         <Container fluid>
-          <Navbar.Brand href="#">Navbar</Navbar.Brand>
+          <StyledBrand onClick={() => handleNavigate('/')}>Navbar</StyledBrand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -31,15 +53,15 @@ function NavScrollExample() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link onClick={() => handleNavigate('/')}> Home</Nav.Link>
-              <Nav.Link onClick={() => handleNavigate('/post/postId')}>
+              <StyledLink onClick={() => handleNavigate('/')}> Home</StyledLink>
+              <StyledLink onClick={() => handleNavigate('/post/postId')}>
                 {' '}
                 PostDetail
-              </Nav.Link>
-              <Nav.Link onClick={() => handleNavigate('/create-post')}>
+              </StyledLink>
+              <StyledLink onClick={() => handleNavigate('/create-post')}>
                 {' '}
                 CreatePost{' '}
-              </Nav.Link>
+              </StyledLink>
 
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -73,3 +95,4 @@ function NavScrollExample() {
 }
 
 export default NavScrollExample;
+
