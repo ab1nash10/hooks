@@ -54,10 +54,10 @@ function NavScrollExample() {
               navbarScroll
             >
               <StyledLink onClick={() => handleNavigate('/')}> Home</StyledLink>
-              <StyledLink onClick={() => handleNavigate('/post/postId')}>
+              {/* <StyledLink onClick={() => handleNavigate('/post/postId')}>
                 {' '}
                 PostDetail
-              </StyledLink>
+              </StyledLink> */}
               <StyledLink onClick={() => handleNavigate('/create-post')}>
                 {' '}
                 CreatePost{' '}

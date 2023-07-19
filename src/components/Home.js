@@ -10,7 +10,7 @@ const BlogHeading = styled.h1`
   `;
 
 const PostSubTitle = styled.p`
-font-size: 73px;
+font-size: 17px;
 `;
 
 const Post = styled.div`
